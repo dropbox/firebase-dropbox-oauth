@@ -60,3 +60,4 @@ typings/
 # IntelliJ
 .idea/
 
+oauth-conf.js
