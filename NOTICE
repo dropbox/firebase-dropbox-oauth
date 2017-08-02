@@ -1,0 +1,6 @@
+FireBase Authentication with Dropbox OAuth
+Copyright 2017 Dropbox Inc.
+
+This software contains code derived from Google's Instagram/Firebase authentication example
+(https://github.com/firebase/custom-auth-samples).
+

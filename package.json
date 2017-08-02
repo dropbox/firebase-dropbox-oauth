@@ -1,15 +1,13 @@
 {
-  "name": "soykaf",
+  "name": "firebase-dropbox-oauth",
   "version": "0.0.0",
-  "description": "Character Management App for Shadowrun 5e",
+  "description": "Firebase-Dropbox Oauth Integration",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build-assets && node server.js",
-    "start-dev": "npm run watch & npm run live-reload & nodemon server.js",
-    "watch": "npm run watch-js",
-    "watch-js": "mkdir -p static/scripts && watchify src/main.js --outfile static/scripts/bundle.js --verbose --debug",
-    "build-js": "mkdir -p static/scripts && browserify src/main.js --outfile static/scripts/bundle.js",
-    "build-assets": "npm run build-js",
+    "start-dev": "npm run watch & npm run live-reload & firebase serve --only hosting,functions",
+    "watch": "mkdir -p static/scripts && watchify src/main.js --outfile static/scripts/bundle.js --verbose --debug",
+    "build": "mkdir -p static/scripts && browserify src/main.js --outfile static/scripts/bundle.js",
+    "deploy": "npm run build && firebase deploy",
     "live-reload": "live-reload static/**/* --port 9092"
   },
   "repository": {
@@ -22,14 +20,13 @@
     "url": "https://github.com/rmehlinger/soykaf/issues"
   },
   "homepage": "https://github.com/rmehlinger/soykaf#readme",
-  "dependencies": {
-    "browserify": "^14.4.0",
-    "express": "~4.15.3",
-    "nodemon": "~1.11.0",
-    "passport-dropbox-oauth2": "^1.1.0"
-  },
   "devDependencies": {
-    "live-reload": "^1.1.0",
+    "browserify": "^14.4.0",
     "watchify": "^3.9.0"
-  }
+  },
+  "dependencies": {
+    "cookie-signature": "^1.0.6",
+    "jquery": "^3.2.1"
+  },
+  "private": true
 }
