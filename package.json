@@ -1,42 +1,35 @@
 {
-  "name": "<NAME>",
-  "version": "0.1.0",
-  "description": "",
+  "name": "soykaf",
+  "version": "0.0.0",
+  "description": "Character Management App for Shadowrun 5e",
   "main": "index.js",
-  "homepage": "https://github.com/bobtail-dev/<NAME>#readme",
+  "scripts": {
+    "start": "npm run build-assets && node server.js",
+    "start-dev": "npm run watch & npm run live-reload & nodemon server.js",
+    "watch": "npm run watch-js",
+    "watch-js": "mkdir -p static/scripts && watchify src/main.js --outfile static/scripts/bundle.js --verbose --debug",
+    "build-js": "mkdir -p static/scripts && browserify src/main.js --outfile static/scripts/bundle.js",
+    "build-assets": "npm run build-js",
+    "live-reload": "live-reload static/**/* --port 9092"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bobtail-dev/<NAME>.git"
+    "url": "git+https://github.com/rmehlinger/soykaf.git"
   },
-  "keywords": [
-    "bobtail",
-    "reactive programming",
-    "FRP"
-  ],
   "author": "Richard Mehlinger",
-  "license": "Apache 2.0",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bobtail-dev/<NAME>/issues"
+    "url": "https://github.com/rmehlinger/soykaf/issues"
   },
-  "scripts": {
-    "build": "npm run clean && npm run babel && npm run minify",
-    "babel": "babel src/main.js --out-file dist/main.js --source-maps",
-    "clean": "rm -rf dist && mkdir dist",
-    "minify": "uglifyjs -mc --source-map --screw-ie8 -o dist/main.min.js dist/main.js",
-    "typescript": "",
-    "test": "babel-node spec/run.js"
+  "homepage": "https://github.com/rmehlinger/soykaf#readme",
+  "dependencies": {
+    "browserify": "^14.4.0",
+    "express": "~4.15.3",
+    "nodemon": "~1.11.0",
+    "passport-dropbox-oauth2": "^1.1.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
-    "babel-preset-es2015": "^6.24.1",
-    "jasmine": "^2.6.0",
-    "jasmine-core": "^2.5.2",
-    "jquery": "^3.2.1",
-    "typescript": "^2.1.6",
-    "uglify-es": "^3.0.26"
-  },
-  "dependencies": {
-    "underscore": "^1.8.3"
+    "live-reload": "^1.1.0",
+    "watchify": "^3.9.0"
   }
 }
