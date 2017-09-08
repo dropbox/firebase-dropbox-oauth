@@ -10,6 +10,8 @@ This project is based on Google's
 authentication integrations 
 [here](https://firebase.googleblog.com/2016/10/authenticate-your-firebase-users-with.html).
 
+**This is example code only, and has not undergone a security audit. Use at your own risk.**
+
 # Configuration and Setup
 
 Before getting started, you will need to register a Firebase application through the 
@@ -52,6 +54,14 @@ exports.config = {
     appSecret: <Your app secret> 
     accessToken: <Your accessToken> 
 }
+```
+You'll also need to add the keys used to sign your cookies to this file. :
+
+```
+exports.cookieKeys = [
+  'your signing key here',
+  'old keys here (for key rotation)'
+]
 ``` 
 
 Add the following Redirect URIs in the OAuth2 section of your app's Settings page:
