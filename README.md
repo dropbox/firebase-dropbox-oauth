@@ -89,5 +89,5 @@ you can use for development. By default the hosting should run on port 5000, and
 # TODO
 
 * Firebase user IDs should be auto-generated UUIDs, with the firebase user profile containing the Dropbox ID.
-* 
+* Correctly display user profile image
 * Integrate File Saver/Chooser
