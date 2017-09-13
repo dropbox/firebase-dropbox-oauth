@@ -22,6 +22,7 @@
   "homepage": "https://github.com/rmehlinger/soykaf#readme",
   "devDependencies": {
     "browserify": "^14.4.0",
+    "live-reload": "^1.1.0",
     "watchify": "^3.9.0"
   },
   "dependencies": {
